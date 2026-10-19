@@ -5,4 +5,4 @@ export class Producto {
   precio!: number;
   stock!: number;
 }
-//operador de Aseveración de Asignación Definitiva
+//operador de Aseveración de Asignación Definitiva  
