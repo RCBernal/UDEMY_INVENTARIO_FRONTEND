@@ -1,1 +1,59 @@
-<p>editar-producto works!</p>
+<div class="container" style="max-width: 500px; margin: 40px auto; padding: 0 15px">
+  <div class="container text-center" style="margin: 30px">
+    <h3>Editar Productos</h3>
+  </div>
+
+  @if (productosIdResource.value(); as producto) {
+    <form (ngSubmit)="guardarProducto()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label mb-2">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          [(ngModel)]="producto.nombre"
+          name="nombre"
+          disabled
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="precio" class="form-label">Precio del Producto</label>
+        <input
+          type="number"
+          step="any"
+          class="form-control"
+          id="precio"
+          [(ngModel)]="producto.precio"
+          name="precio"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="stock" class="form-label">Existencia del Producto</label>
+        <input
+          type="number"
+          class="form-control"
+          id="stock"
+          [(ngModel)]="producto.stock"
+          name="stock"
+        />
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px">
+        <button type="submit" class="btn-outline theme-warning btn-sm me-3">
+          <i class="bi bi-save"> Guardar </i>
+        </button>
+
+        <button type="button" class="btn-outline theme-danger btn-sm me-3">
+          <i class="bi bi-back"> Volver </i>
+        </button>
+
+        <!--<a routerLink="/productos" class="btn-outline theme-danger btn-sm me-3">Volver</a>--->
+
+        <button type="reset" class="btn-outline theme-secondary btn-sm me-3">
+          <i class="bi bi-eraser"> Limpiar </i>
+        </button>
+      </div>
+    </form>
+  }
+</div>
